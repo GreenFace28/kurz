@@ -23,4 +23,4 @@ email = input("Zadej email:")
 
 print(cara)
 
-print(f"Zadal jsi: /n Destinace={destinace} /n Jméno=)
+print(f"Zadal jsi: /n Destinace={destinace} /n Jméno=")

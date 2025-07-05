@@ -1,12 +1,15 @@
-jmeno = "Marek"
-heslo = "12364"
-uzivatel = {"Marek": "1234"}
-zprava = ()
+samohlasky = 'aeiouáéíóúů'
+souhlasky = 'bcčdďfghjklmnňpqrřsštťvwxzž'
 
-if jmeno in uzivatel and heslo in uzivatel.get("Marek"):
-  zprava = "Ahoj Marek, vítej v aplikaci! Pokračuj..."
-else:
-  zprava = "Uživatelské jméno nebo heslo nejsou v pořádku!"
+vysledky = {'samohlasky': 0, 'souhlasky': 0}
+veta = 'Zvuk řeči je produkován otevřenou konfigurací vokálního traktu'
 
-print(zprava)
-  
+for znak in veta:
+    if znak.isalpha():
+        znak = znak.lower()
+        if znak in samohlasky:
+            vysledky['samohlasky'] += 1
+        elif znak in souhlasky:
+            vysledky['souhlasky'] += 1
+
+print(vysledky)

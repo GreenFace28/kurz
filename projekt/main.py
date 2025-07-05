@@ -42,7 +42,7 @@ users = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"
 username = input("username: ")
 password = input("password: ")
 print(cara)
-if username in users and password in users.get(username):
+if username in users and password == users.get(username):
     print("Vítej v aplikaci, " + username + "\nMáš 3 texty na analízu. ")
 else:
     print("Neregistrovaný uživatel, ukončuji program.")

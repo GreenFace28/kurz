@@ -86,34 +86,18 @@ for slovo in slova:
         mala_slova += 1
 
 # počet čísel
-cisla = 0
-for cislo in slova:
-    if cislo.isnumeric():
-        cisla += 1
-
-# suma čísel
-cislo = ""
+pocet_cisel = 0
 suma = 0
-for znak in slova:
-    if znak.isdigit():
-        cislo += znak
-    else:
-        if cislo:
-            suma += int(cislo)
-            cislo = ""
-if cislo != "":
-    suma += int(cislo)
+for slovo in slova:
+    if slovo.isnumeric():
+        pocet_cisel += 1
+        suma += int(slovo)
 
 # statistika slov
-vycistena_slova = []
 delky_slov = {}
-
 for slovo in slova:
     ciste_slovo = slovo.strip(",.!:'")
-    vycistena_slova.append(ciste_slovo.lower())
-
-for slovo in vycistena_slova:
-    delka = len(slovo)
+    delka = len(ciste_slovo)
     if delka in delky_slov:
         delky_slov[delka] += 1
     else:
@@ -124,7 +108,7 @@ print(f"Ve vybraném textu je {pocet_slov} počet slov.")
 print(f"Velkým písmenem začíná {s_velkym_pismenem} slov.")
 print(f"Počet slov psaných velkými písmeny {velkymi_pismeny}.")
 print(f"Počet slov psaných malími písmeny {mala_slova}.")
-print(f"Počet čísel {cisla}.")
+print(f"Počet čísel {pocet_cisel}.")
 print(f"Suma čísel {suma}.")
 print(cara)
 print("Délka | Výskyt | Počet")
@@ -132,4 +116,4 @@ print(cara)
 for delka in sorted(delky_slov):
     pocet = delky_slov[delka]
     hvezdy = "*" * pocet
-    print(f"{delka:3} | {hvezdy: <17} | {pocet}", sep="\n")
+    print(f"{delka:3} | {hvezdy: <17} | {pocet}")
